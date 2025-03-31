@@ -35,17 +35,7 @@ const nextConfig = {
 
     return config;
   },
-  // Enable Fast Refresh
-  webpackDevMiddleware: (config) => {
-    config.watchOptions = {
-      poll: 1000,
-      aggregateTimeout: 300,
-    }
-    return config
-  },
-  output: 'export',
-  basePath: process.env.NODE_ENV === 'production' ? '/vibeverse' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/vibeverse/' : '',
+  // Removed GitHub Pages specific configuration
 };
 
-module.exports = nextConfig; 
+module.exports = nextConfig;
