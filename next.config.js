@@ -9,7 +9,7 @@ const nextConfig = {
     optimizeCss: true
   },
   images: {
-    unoptimized: true,
+    unoptimized: process.env.NODE_ENV === 'production',
     remotePatterns: [
       {
         protocol: 'https',
@@ -35,7 +35,6 @@ const nextConfig = {
 
     return config;
   },
-  // Removed GitHub Pages specific configuration
 };
 
 module.exports = nextConfig;

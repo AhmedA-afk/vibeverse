@@ -1,21 +1,24 @@
 'use client';
 
-interface JsonLdProps {
-  type: 'Organization' | 'WebSite' | 'Article';
+import React from 'react';
+
+export interface JsonLdProps {
+  type: string;
   data: Record<string, any>;
 }
 
-export default function JsonLd({ type, data }: JsonLdProps) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': type,
-    ...data,
-  };
-
+const JsonLd: React.FC<JsonLdProps> = ({ type, data }) => {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          ...data,
+          "@type": type,
+        }),
+      }}
     />
   );
-} 
+};
+
+export default JsonLd;

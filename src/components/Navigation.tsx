@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import Logo from './Logo'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -17,7 +18,6 @@ export default function Navigation() {
   }, [])
 
   const navItems = [
-    { name: 'Home', href: '/' },
     { name: 'Articles', href: '/articles' },
     { name: 'Courses', href: '/courses' },
     { name: 'Contests', href: '/contests' },
@@ -35,13 +35,13 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex-shrink-0"
+          <motion.div 
+            className="flex-shrink-0 flex items-center"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            <Link href="/" className="text-2xl font-bold gradient-text neon-glow">
-              VibeVerse.tech
-            </Link>
+            <Logo variant="colored" size={50} />
           </motion.div>
 
           {/* Desktop Navigation */}

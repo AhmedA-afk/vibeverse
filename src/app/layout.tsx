@@ -6,21 +6,31 @@ import JsonLd from '@/components/JsonLd'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'VibeVerse - The Future of AI-Powered Software Development',
-  description: 'VibeVerse is the ecosystem where Vibe Coding comes to life. Experience the revolutionary programming paradigm that uses natural language and AI to transform software development. Join our community of creators building the future.',
-  keywords: 'vibe coding, vibecoding, AI programming, natural language coding, software development, artificial intelligence, developer tools, code generation, AI-powered development',
+  metadataBase: new URL('https://vibeverse.tech'),
+  title: 'VibeVerse - AI-Powered Software Development',
+  description: 'Transform your ideas into code instantly with VibeVerse. Experience the future of software development with AI-powered coding assistance.',
+  keywords: ['AI coding', 'software development', 'programming', 'artificial intelligence', 'code generation'],
   openGraph: {
-    title: 'VibeVerse - The Future of AI-Powered Software Development',
-    description: 'Transform your development workflow with Vibe Coding - where natural language meets AI to create software faster and more intuitively.',
-    images: ['/og-image.jpg'],
-    type: 'website',
+    title: 'VibeVerse - AI-Powered Software Development',
+    description: 'Transform your ideas into code instantly with VibeVerse. Experience the future of software development with AI-powered coding assistance.',
+    url: 'https://vibeverse.tech',
+    siteName: 'VibeVerse',
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'VibeVerse - AI-Powered Software Development',
+      },
+    ],
     locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'VibeVerse - Revolutionary AI-Powered Software Development',
-    description: 'Experience the future of coding with VibeVerse. Use natural language to create software through AI assistance.',
-    images: ['/twitter-image.jpg'],
+    title: 'VibeVerse - AI-Powered Software Development',
+    description: 'Transform your ideas into code instantly with VibeVerse. Experience the future of software development with AI-powered coding assistance.',
+    images: ['/images/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -66,10 +76,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
         <JsonLd type="WebSite" data={websiteData} />
         <JsonLd type="Organization" data={organizationData} />
       </head>
       <body className={inter.className}>
+        <JsonLd />
         {children}
       </body>
     </html>

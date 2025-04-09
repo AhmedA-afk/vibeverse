@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Logo from './Logo';
 
 export default function Footer() {
   return (
@@ -8,12 +9,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold gradient-text">
-              VibeVerse.tech
-            </h3>
-            <p className="text-sm text-gray-400">
-              The future of development is here.
+          <div className="space-y-8 -ml-8">
+            <div className="flex justify-start">
+              <Logo variant="white" size={50} />
+            </div>
+            <p className="text-sm text-gray-400 max-w-xs">
+              The future of development is here. Join us in revolutionizing software development with Vibe Coding in the Vibe Verse.
             </p>
           </div>
 

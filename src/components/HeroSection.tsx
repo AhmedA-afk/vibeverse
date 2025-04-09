@@ -35,14 +35,14 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <div className="relative text-center min-h-screen flex items-center justify-center">
+    <div className="relative text-center min-h-screen flex items-center justify-center py-20">
       <Background3D />
       
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         <motion.h1 
           ref={titleRef}
-          className="text-6xl md:text-8xl font-bold mb-6 gradient-text animate-gradient"
+          className="text-6xl md:text-8xl font-bold mb-8 gradient-text animate-gradient text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -53,7 +53,7 @@ export default function HeroSection() {
         
         <motion.p 
           ref={subtitleRef}
-          className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
+          className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -62,7 +62,7 @@ export default function HeroSection() {
         </motion.p>
 
         <motion.div 
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-4 mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}

@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "regions": ["cdg1"],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
+  "redirects": [
+    {
+      "source": "/vibeverse/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    }
+  ]
+}

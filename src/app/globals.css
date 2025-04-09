@@ -14,8 +14,8 @@
   --neon-glow: 0 0 10px rgba(99,102,241,0.5),
                0 0 20px rgba(99,102,241,0.3),
                0 0 30px rgba(99,102,241,0.2);
-  --selection-bg: rgba(10, 223, 247, 0.6);
-  --selection-text: #ffffff;
+  --selection-bg: rgba(32, 184, 205, 0.6);
+  --selection-text: #00ffff;
 }
 
 body {
@@ -344,7 +344,7 @@ body {
 ::selection {
   background-color: var(--selection-bg);
   color: var(--selection-text);
-  text-shadow: 0 0 8px rgba(10, 223, 247, 0.5);
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
 }
 
 /* Custom scrollbar for Firefox */
