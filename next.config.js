@@ -9,7 +9,7 @@ const nextConfig = {
     optimizeCss: true
   },
   images: {
-    unoptimized: process.env.NODE_ENV === 'production',
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -35,6 +35,10 @@ const nextConfig = {
 
     return config;
   },
+  // Removed the webpackDevMiddleware option that Next.js doesn't recognize
+  output: 'export',
+  basePath: process.env.NODE_ENV === 'production' ? '/vibeverse' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/vibeverse/' : '',
 };
 
 module.exports = nextConfig;
